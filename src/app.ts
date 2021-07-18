@@ -29,7 +29,13 @@ app.use(
   express.static(path.join(__dirname, "public/perfAnalyticsJs.js"))
 );
 
-app.listen(port, host, () => {
+// app.listen(port, () => {
+//   log.info(`Server listing at http://${host}:${port}`);
+//   connect();
+//   routes(app);
+// });
+
+app.listen(process.env.PORT || 3000, () => {
   log.info(`Server listing at http://${host}:${port}`);
   connect();
   routes(app);
