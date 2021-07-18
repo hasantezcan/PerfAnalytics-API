@@ -1,6 +1,6 @@
-# PerfAnalytics
+# PerfAnalytics API
 
-PerfAnalytics is an ecosystem which collects and criticizes web performance data.
+PerfAnalytics API is part of PerfAnalytics ecosystem which collects and criticizes web performance data.
 
 ## Dev Logs
 
