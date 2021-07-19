@@ -1,6 +1,6 @@
 #Dockerfile
 # PROD CONFIG
-FROM node as prod
+FROM node:14 as prod
 
 WORKDIR /app
 

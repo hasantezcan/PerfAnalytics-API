@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 import express from "express";
-import config from "config";
 import log from "./utils/logger";
 import connect from "./db/connect";
 import routes from "./routes";
@@ -17,9 +16,6 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-const port = config.get("port") as number;
-const host = config.get("host") as string;
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -29,14 +25,10 @@ app.use(
   express.static(path.join(__dirname, "public/perfAnalyticsJs.js"))
 );
 
-// app.listen(port, () => {
-//   log.info(`Server listing at http://${host}:${port}`);
-//   connect();
-//   routes(app);
-// });
+const PORT: string | number = process.env.PORT || 5000;
 
-app.listen(process.env.PORT || 3000, () => {
-  log.info(`Server listing at http://${host}:${port}`);
+app.listen(PORT, () => {
+  log.info(`Server listing at http://localhost:${PORT}`);
   connect();
   routes(app);
 });
