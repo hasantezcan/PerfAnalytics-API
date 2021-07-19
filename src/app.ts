@@ -6,8 +6,12 @@ import connect from "./db/connect";
 import routes from "./routes";
 import cors from "cors";
 
+const PORT: string | number = process.env.PORT || 5000;
+const HOST: string = process.env.PORT
+  ? `http://localhost:${PORT}`
+  : "https://ht-perfanalytics-api.herokuapp.com/api/";
+
 const app = express();
-const path = require("path");
 
 var corsOptions = {
   origin: ["http://127.0.0.1:5500", "http://localhost:3000"],
@@ -15,20 +19,11 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve perfAnalyticsJs package
-app.use(
-  "/perfAnalyticsJs",
-  express.static(path.join(__dirname, "public/perfAnalyticsJs.js"))
-);
-
-const PORT: string | number = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
-  log.info(`Server listing at http://localhost:${PORT}`);
+  log.info(`Server listing at ${HOST}`);
   connect();
   routes(app);
 });
