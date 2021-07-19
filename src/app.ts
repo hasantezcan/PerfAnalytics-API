@@ -7,9 +7,10 @@ import routes from "./routes";
 import cors from "cors";
 
 const PORT: string | number = process.env.PORT || 5000;
-const HOST: string = process.env.PORT
-  ? `http://localhost:${PORT}`
-  : "https://ht-perfanalytics-api.herokuapp.com/api/";
+const HOST: string =
+  process.env.PORT === `6060`
+    ? `http://localhost:${PORT}`
+    : "https://perfanalytics-api-ht.herokuapp.com/api/";
 
 const app = express();
 
