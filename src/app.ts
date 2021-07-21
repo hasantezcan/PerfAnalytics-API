@@ -19,7 +19,9 @@ var corsOptions = {
     "http://127.0.0.1:5500",
     "http://localhost:3000",
     "https://hasantezcan.github.io",
-    "https://perfanalytics-test-site-1.netlify.app"
+    "https://react-metrics.netlify.app",
+    "https://penguins-metrics.netlify.app",
+    "https://random-metrics.netlify.app",
   ],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
