@@ -10,7 +10,7 @@ import {
 
 async function createMetricHandler(req: Request, res: Response) {
   console.log("-----------------------------");
-  console.log("REQUEST BODY   :", req.body);
+  console.log("REQUEST BODY   :", JSON.parse(req.body));
   console.log("REQUEST HEADER :", req.header);
   console.log("-----------------------------");
 
@@ -52,7 +52,7 @@ async function getMetricsByURLHandler(req: Request, res: Response) {
 
     if (!metrics || metrics.toString() === "") {
       log.error("NOT FOUND");
-     return res.send(metrics);
+      return res.send(metrics);
     }
     return res.send(metrics);
   } catch (error) {
