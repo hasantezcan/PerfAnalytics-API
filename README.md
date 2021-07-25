@@ -10,6 +10,7 @@ PerfAnalytics API is part of PerfAnalytics ecosystem which collects and criticiz
 - Used [Typescript](https://www.typescriptlang.org/).
 - Used [MongoDB](https://www.mongodb.com) to record metrics.
 - Deployed with [Heroku](https://www.heroku.com/).
+  - [Click for](https://github.com/hasantezcan/PerfAnalytics-API/deployments/activity_log?environment=perfanalytics-api-ht) Deployment logs!  
 
 > **Dockerfile** is ready if you want to use the dockerized version you can use it!
 ---
